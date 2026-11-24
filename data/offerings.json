@@ -1,0 +1,94 @@
+{
+    "shopId": "ekoy",
+    "shopName": "Elektroniikka Kauppa oy",
+    "offerings": [
+        {
+            "campaignId": "viikko45",
+            "dateStart": "2.11.2026",
+            "dateEnd": "8.11.2026",
+            "products": [
+                {
+                    "id": "p3",
+                    "name": "Riistakamera",
+                    "price": 199
+                },
+                {
+                    "id": "p6",
+                    "name": "Älypuhelin",
+                    "price": 299
+                },
+                {
+                    "id": "p7",
+                    "name": "Pelikonsoli",
+                    "price": 399
+                }
+            ]
+        },
+        {
+            "campaignId": "viikko46",
+            "dateStart": "9.11.2026",
+            "dateEnd": "15.11.2026",
+            "products": [
+                {
+                    "id": "p1",
+                    "name": "Kaiutin",
+                    "price": 199
+                },
+                {
+                    "id": "p2",
+                    "name": "Videotykki",
+                    "price": 299
+                },
+                {
+                    "id": "p6",
+                    "name": "Älypuhelin",
+                    "price": 349
+                }
+            ]
+        },
+        {
+            "campaignId": "viikko47",
+            "dateStart": "16.11.2026",
+            "dateEnd": "22.11.2026",
+            "products": [
+                {
+                    "id": "p4",
+                    "name": "Televisio",
+                    "price": 299
+                },
+                {
+                    "id": "p5",
+                    "name": "Läppäri",
+                    "price": 399
+                },
+                {
+                    "id": "p6",
+                    "name": "Älypuhelin",
+                    "price": 449
+                }
+            ]
+        },
+        {
+            "campaignId": "viikko48",
+            "dateStart": "23.11.2026",
+            "dateEnd": "29.11.2026",
+            "products": [
+                {
+                    "id": "p1",
+                    "name": "Kaiutin",
+                    "price": 179
+                },
+                {
+                    "id": "p5",
+                    "name": "Läppäri",
+                    "price": 429
+                },
+                {
+                    "id": "p6",
+                    "name": "Älypuhelin",
+                    "price": 399
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjoukset</title>
+    <style>
+
+    figure {
+        max-width: 200px;
+        border: solid thin black;
+        text-align: center;
+    }
+    figure img{
+        width: 100%;
+    } 
+
+    </style>
+    </head>
+    <body>
+        <section id="tuotegalleria"></section>
+        <pre id="demopre"></pre>
+        <script>
+
+    async function main(kampanja){
+        const response = await fetch ("data/offerings.json")
+        const data = await response.json()
+        const viikon_tarjoukset = data.offerings
+        .filter (item => item.campaignId == kampanja)[0]
+        console.log(viikon_tarjoukset.products)
+        document.getElementById("demopre").innerHTML =
+         JSON.stringify(viikon_tarjoukset, null, 3)
+         const tuotegalleria = document.getElementById("tuotegalleria")
+         tuotegalleria.innerHTML = viikon_tarjoukset.products
+         .map(
+            tarjous =>`
+           <figure>
+             <img src="nopee_pulu.png" alt="tuotekuva">
+             <figcaption>${tarjous.name}</figcaption>
+             <b>${tarjous.price}</b>
+             </figure>
+
+             `)
+             .join("")
+    }
+     const kampanja = "viikko45"
+     main (kampanja)
+     </script>
+    
+</body>
+</html>
