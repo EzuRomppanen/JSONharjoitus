@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <nav id ="langnav">langnav</nav>
+    <h1  id ="otsikko">tervehdys</h1>
+    <pre id ="data_display">data</pre>
+    <footer> JSON demo</footer>
+    <script>
+
+        const main = async () => {
+        const url_params = new URLSearchParams(document.location.search)
+        const responce = await fetch ("data/greetings.json")
+        const data =  await responce.json()
+        console.log(data)
+        const all_langs = data.all_langs
+        document.getElementById("langnav").innerHTML=
+            all_langs.map (x => `<a href="?lang=${x}">${x}/a>`).join(" ")
+        let lang = url_params.get("lang")
+        if(!lang || !all_langs.includes(lang)){
+            lang = "en"
+        }
+        const tervehdys = data.messages[lang]
+        document.documentElement.lang = lang
+        const heading_elem = document.getElementById("otsikko")
+        const data_display_elem = document.getElementById("data_display")
+        data_display.innerText = JSON.stringify(data, null, 2)
+        heading_elem.innerHTML = tervehdys
+        console.log("hei maailma")
+    }
+    main ()
+
+    /*
+        const tervehdys = Math.random() <0.5 ? "Moi Maailma!" : "Hello World!"
+        let tervehdys
+        if (Math.random() < 0.5){
+            tervehdys = "Moi Maailma!"         
+        }
+        else {
+            tervehdys = "Hello World!"
+        }    
+    */
+      
+</script> 
+</body>
+</html>

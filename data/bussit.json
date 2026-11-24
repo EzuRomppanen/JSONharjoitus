@@ -1,0 +1,22 @@
+{
+    "tauluid": "bussitaulu123",
+    "osoite": "Keskustori 1",
+    "linjat": [
+        {
+            "linja": "1A",
+            "min": 2
+        },
+        {
+            "linja": "1B",
+            "min": 1
+        },
+        {
+            "linja": "8A",
+            "min": 4
+        },
+        {
+            "linja": "8B",
+            "min": 3
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "status": 200,
+    "heading": "Greetings",
+    "all_langs":["en","fi","sv"],
+    "messages": {
+        "en": "Hello World!",
+        "fi": "Moikka maailma!",
+        "sv": "Hejsan Allihooppa!"
+    }
+} 

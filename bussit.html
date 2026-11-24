@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bussiaikataulu</title>
+    <style>
+        /*CSS*/
+
+    ul, ol {
+        list-style-type: none;
+        margin-block-start: 0;
+        margin: 0;
+        padding: 0;
+    }
+    li{
+        display: flex;
+        justify-content: space-between;
+        background:#999;
+        margin-bottom: 0.5em ;
+        padding: 0.5em;
+    }
+    li:nth-child(odd){ /*even*/
+        background-color:rgb(19, 195, 255);
+    }
+    .skeleton{
+        animation: blink 5s infinite;
+        background-color: #999!important;
+    }
+    @keyframes blink{
+        50% {opacity: 0,5;}
+    }
+
+</style>
+
+</head>
+<body>
+
+     <h1>Bussiaikataulu</h1>
+     <h2 id= "osoite">pysäkki</h2>
+     <ul id= "aikataulut">
+        <li class="skeleton">a</li>
+        <li class="skeleton">b</li>
+        <li class="skeleton">c</li>
+        </ul>
+
+    <script>
+        // ..github.dev/bussit.html
+
+async function main() {
+    const response = await fetch("data/bussit.json")
+    await new Promise (resolve => setTimeout(resolve, 1000))
+    const data = await response.json()
+    const osoite_elem = document.getElementById("osoite")
+    osoite_elem.innerText = data.osoite    
+    const aikataulu = document.getElementById("aikataulut")
+    aikataulu.innerHTML = data.linjat
+    .sort(function(a,b){return a.min - b.min})
+    .map(x => `<li>
+        <span>${x.linja}</span>   <span>${x.min}</span>
+        </li>`)
+        .join(" ") 
+
+}
+main()
+
+</script>
+</body>
+</html>
